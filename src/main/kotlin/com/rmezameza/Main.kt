@@ -1,15 +1,17 @@
 package com.rmezameza
 
-import com.rmezameza.util.FileInputReader
+import com.rmezameza.aoc.AoCHandler
+import kotlin.time.ExperimentalTime
 
+@OptIn(ExperimentalTime::class)
 fun main() {
-    val fileInputReader = FileInputReader()
-    val lineList : MutableList<String> = fileInputReader.readAllLine()
-    val lineListTrim : MutableList<String> = fileInputReader.readAllLinesAndTrim()
+    val aocHandler = AoCHandler()
 
-    println("Test line print:")
-    lineList.forEach{println (it)}
 
-    println("\nAnother test line print with trim")
-    lineListTrim.forEach{println (it)}
+    print("Please enter day number (1 - 1): ")
+    val inputDay = readln()
+    val resultsOfActualDay : MutableList<String> = aocHandler.getResultsOfSpecificDay(inputDay.toInt())
+
+    println("\nResults of Day $inputDay:\n")
+    resultsOfActualDay.forEach{ println(it) }
 }

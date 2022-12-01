@@ -7,8 +7,8 @@ import com.rmezameza.constants.FilePathConstants
 
 class FileInputReader {
 
-    fun readAllLine() : MutableList<String> {
-        val inputStream : InputStream = File(FilePathConstants.INPUT_FILE_PATH + "test.txt").inputStream()
+    fun readAllLine(dayInputTextFile : String) : MutableList<String> {
+        val inputStream : InputStream = File(FilePathConstants.INPUT_FILE_PATH + dayInputTextFile).inputStream()
         val lineList : MutableList<String> = mutableListOf()
 
         inputStream.bufferedReader().forEachLine { lineList.add(it) }
@@ -16,8 +16,8 @@ class FileInputReader {
         return lineList
     }
 
-    fun readAllLinesAndTrim() : MutableList<String> {
-        val inputStream : InputStream = File(FilePathConstants.INPUT_FILE_PATH + "test.txt").inputStream()
+    fun readAllLinesAndTrim(dayInputTextFile : String) : MutableList<String> {
+        val inputStream : InputStream = File(FilePathConstants.INPUT_FILE_PATH + dayInputTextFile).inputStream()
         val lineList : MutableList<String> = mutableListOf()
 
         inputStream.bufferedReader().forEachLine { it ->
