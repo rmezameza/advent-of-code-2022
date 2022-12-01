@@ -1,25 +1,20 @@
 package com.rmezameza.days
 
+import com.rmezameza.aoc.AoCDay
 import com.rmezameza.util.FileInputReader
 
-class Day1 {
-    private val fileInputReader = FileInputReader()
-    private val stringInputList : MutableList<String> = fileInputReader.readAllLine("day1.txt")
-    private val results : MutableList<String> = mutableListOf()
+class Day1 : AoCDay("day1.txt"){
 
     init {
-        day11()
-        day12()
+        partOne()
+        partTwo()
     }
 
-    fun getResults() : MutableList<String>{
-        return this.results
-    }
-    private fun day11() {
+    override fun partOne() {
         this.results.add("The most calories carried by an elve: " + getSumCaloriesPerElveList().max())
     }
 
-    private fun day12() {
+    override fun partTwo() {
         val sumCaloriesPerElveList : MutableList<Int> = getSumCaloriesPerElveList()
         var finalSum = 0
         var tempMax: Int
@@ -33,9 +28,11 @@ class Day1 {
         this.results.add("The sum of the three most calories is: $finalSum")
     }
 
+
     private fun getSumCaloriesPerElveList() : MutableList<Int> {
         val sumCaloriesPerElveList : MutableList<Int> = mutableListOf()
         var tempSum = 0
+
 
         this.stringInputList.forEach{
             if(it != "") {

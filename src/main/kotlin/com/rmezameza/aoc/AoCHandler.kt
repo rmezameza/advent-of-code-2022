@@ -11,7 +11,7 @@ class AoCHandler {
 
     init {
         val day1 = Day1()
-        this.dayList.add(day1.getResults())
+        this.dayList.add(day1.getDayResults())
     }
 
     fun getResultsOfSpecificDay(specificDay : Int) : MutableList<String> {
